@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete User</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Delete</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Neom.html">Neom</a></li>
+                <li><a href="Jeddah.html">Jeddah</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="Login.html">Log in</a></li>
+                <li><a href="AdminPanel.html">Admin Panel</a></li>
+                <li><a href="viewContacts.html">Result Display</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="form-container2">
+        <h2 class="header">Delete User by First Name</h2>
+        <form method="POST" action="delete.php" class="form">
+            <input type="text" name="first_name" placeholder="Enter First Name"  class="input" required>
+            <button type="submit" class="submit-btn">Delete</button>
+        </form>
+        <a href="AdminPanel.html" class="submit-btn">Back to Admin Panel</a>
+    </div>
+    <footer>
+        <p>&copy; 2024 Travel Destinations</p>
+    </footer>
+</body>
+</html>
+

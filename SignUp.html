@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign-Up Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sign Up </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Neom.html">Neom</a></li>
+                <li><a href="Jeddah.html">Jeddah</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="Login.html">Log in</a></li>
+                <li><a href="AdminPanel.html">Admin Panel</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+   
+    <div class="form-container2">
+        <h2 class="header">Sign Up</h2>
+        <form action="SignUp.php" method="post" class="form">
+            <label for="email" class="label">Email:</label>
+            <input type="email" name="email" class="input" required>
+
+            <label for="password" class="label">Password:</label>
+            <input type="password" name="password" class="input" required>
+            
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+        <p class="redirect-link">Already have an account? <a href="Login.html">Log in here</a></p>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Explore KSA</p>
+    </footer>
+</body>
+</html>
+
+

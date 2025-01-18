@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Neom.html">Neom</a></li>
+                <li><a href="Jeddah.html">Jeddah</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="Login.html">Log in</a></li>
+                <li><a href="AdminPanel.html">Admin Panel</a></li>
+                <li><a href="viewContacts.html">Result Display</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <img src="maraya.png" class="header-image" alt="Header Image">
+
+    <main>
+        <h2>Get In Touch</h2>
+        <div class="form-container">
+            <form action="contact.php" method="post" onsubmit="return confirmSubmit()">
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" name="first_name"><br>
+                
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name"><br>
+                
+                <label for="email_address">Email Address</label>
+                <input type="email" id="email_address" name="email_address"><br>
+
+                <label for="message_type">Message Type</label><br>
+                <select id="message_type" name="message_type">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="Complaint">Complaint</option>
+                    <option value="Request">Request</option>
+                    <option value="Suggestion">Suggestion</option>
+                </select><br><br>
+
+                <label for="message">Your Message</label><br>
+                <textarea id="message" name="message" placeholder="Enter your message here"></textarea><br>
+
+                <label>Subscribe to our newsletter:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="subscribe" value="yes"> Yes</label>
+                    <label><input type="radio" name="subscribe" value="no"> No</label>
+                </div><br>
+
+                <button type="submit" onclick="return confirmSubmit()">Submit</button>
+                <button type="reset" onclick="return confirmReset()">Reset</button>
+                <p>Or email us directly at <a href="mailto:info@ExploreKSA.com">info@ExploreKSA.com</a></p>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Travel Destinations</p>
+    </footer>
+
+    <script>
+        // Focus and blur events for hint text
+        document.getElementById("first_name").addEventListener("focus", function() {
+            this.placeholder = "Enter your first name"; // Hint text appears
+        });
+        document.getElementById("first_name").addEventListener("blur", function() {
+            this.placeholder = ""; // Hint text disappears
+        });
+
+        document.getElementById("last_name").addEventListener("focus", function() {
+            this.placeholder = "Enter your last name"; // Hint text appears
+        });
+        document.getElementById("last_name").addEventListener("blur", function() {
+            this.placeholder = ""; // Hint text disappears
+        });
+
+        document.getElementById("email_address").addEventListener("focus", function() {
+            this.placeholder = "Enter your email address"; // Hint text appears
+        });
+        document.getElementById("email_address").addEventListener("blur", function() {
+            this.placeholder = ""; // Hint text disappears
+        });
+
+        // Email input validation
+        document.getElementById("email_address").addEventListener("input", function() {
+            if (!this.value.includes("@")) {
+                this.style.borderColor = "red";
+            } else {
+                this.style.borderColor = "green";
+            }
+        });
+
+        // Dropdown change event
+        document.getElementById("message_type").addEventListener("change", function() {
+            alert("You selected: " + this.value);
+        });
+
+        // Confirmation dialog for form submission
+        function confirmSubmit() {
+            return confirm("Are you sure you want to submit?");
+        }
+
+        // Confirmation dialog for form reset
+        function confirmReset() {
+            return confirm("Are you sure you want to reset the form?");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Contact Messages</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Function to handle the search
+        function performSearch(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const firstName = document.getElementById("first_name").value;
+
+            // Create an AJAX request
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "search.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            // Handle the response
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    // Display the results in the results container
+                    document.getElementById("results").innerHTML = xhr.responseText;
+                } else {
+                    document.getElementById("results").innerHTML = "Error: Unable to fetch results.";
+                }
+            };
+
+            // Send the request with the first name as a parameter
+            xhr.send("first_name=" + encodeURIComponent(firstName));
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Search</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Neom.html">Neom</a></li>
+                <li><a href="Jeddah.html">Jeddah</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="Login.html">Log in</a></li>
+                <li><a href="AdminPanel.html">Admin Panel</a></li>
+                <li><a href="viewContacts.html">Result Display</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="form-container2">
+        <h2 class="header">Search User by First Name</h2>
+        <form onsubmit="performSearch(event)" class="form">
+            <input type="text" id="first_name" name="first_name" placeholder="Enter First Name" class="input" required>
+            <button type="submit" class="submit-btn">Search</button>
+        </form>
+        <a href="index.html">Back to Main Menu</a>
+    </div>
+
+    <!-- Results Container -->
+    <div id="results" class="search-results">
+        <h3>Search Results:</h3>
+        <!-- Results will be dynamically inserted here -->
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Travel Destinations</p>
+    </footer>
+</body>
+</html>

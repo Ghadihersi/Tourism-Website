@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update User</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Update Record</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Neom.html">Neom</a></li>
+                <li><a href="Jeddah.html">Jeddah</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="Login.html">Log in</a></li>
+                <li><a href="AdminPanel.html">Admin Panel</a></li>
+                <li><a href="viewContacts.html">Result Display</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="form-container">
+        <form action="update.php" method="post">
+            <label for="id">Record ID (required):</label>
+            <input type="text" id="id" name="id" required><br><br>
+
+            <label for="update_field">Field to Update:</label>
+            <select id="update_field" name="update_field" required>
+                <option value="">Select a field...</option>
+                <option value="first_name">First Name</option>
+                <option value="last_name">Last Name</option>
+                <option value="email_address">Email</option>
+                <option value="message">Message</option>
+                <option value="message_type">Message Type</option>
+                <option value="subscribe_newsletter">Subscribe to Newsletter</option>
+            </select><br><br>
+
+            <label for="new_value">New Value:</label>
+            <input type="text" id="new_value" name="new_value" required><br><br>
+
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</body>
+</html>
